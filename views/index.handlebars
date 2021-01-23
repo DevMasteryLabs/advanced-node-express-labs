@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta name='description' content='Home page'>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Advanced Node and Express Labs</title>
+    <link rel="stylesheet" href="/public/style.css">
+  </head>
+  <body>
+
+    <h1 class="center">Advanced Node and Express Labs</h1>
+    <h2 class="center" id="handlebars-success-message">This page is rendered from Handlebars into HTML | {{status}}</h2>
+    <p id="handlebars-variable">{{message}}</p>
+
+    <div class="forms-container">
+
+    {{#if showLogin}}
+      <form class="center" action="/login" method="POST">
+        <h2 class="center">Login Form</h2>
+        <div>
+          <input placeholder="Username" type="text" name="username">
+        </div>
+        <div>
+          <input placeholder="Password" type="password" name="password">
+        </div>
+        <div>
+          <input type="submit" value="Log In">
+        </div>
+      </form>
+    {{/if}}
+
+    {{#if showRegistration}}
+      <form class="center" action="/register" method="POST">
+        <h2 class="center">Registration Form</h2>
+        <div>
+          <input placeholder="Username" type="text" name="username">
+        </div>
+        <div>
+          <input placeholder="Password" type="password" name="password">
+        </div>
+        <div>
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    {{/if}}
+
+    </div>
+    
+    {{#if showSocialAuth}}
+      <div class="center" style="margin-bottom: 30px;">
+        <h2 class="center">Social Login</h2>
+        <div class="social-login-container">
+          <a href="/auth/google" class="text">Login with Google</a>
+        </div>
+      </div>
+    {{/if}}
+    
+  </body>
+</html>
